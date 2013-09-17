@@ -1,0 +1,20 @@
+.place {
+    width: 400px;
+    height: 400px;
+    background-color: #ccc;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    border-radius: 200px;
+}
+
+.ball {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
