@@ -21,8 +21,15 @@ function Bird(x, y, vx, vy, ax, ay) {
     ]
     var imageIndex = 0;
 
-    this.birdImage = document.createElement("img");
-    this.birdImage.setAttribute("src", imageSrc[imageIndex]);
+    this.birdImages = [
+        document.createElement("img"),
+        document.createElement("img"),
+        document.createElement("img")
+    ];
+
+    for (var i in this.birdImages) {
+        this.birdImages[i].setAttribute("src", imageSrc[i]);
+    }
 
     this.time = 0;
     this.changeTime = 0.1;
@@ -51,7 +58,7 @@ function Bird(x, y, vx, vy, ax, ay) {
 
         ctx.translate(x, y);
         ctx.rotate(rotateDeg);
-        ctx.drawImage(this.birdImage, -this.width / 2, -this.height / 2, this.width, this.height);
+        ctx.drawImage(this.birdImages[imageIndex], -this.width / 2, -this.height / 2, this.width, this.height);
         ctx.rotate(-rotateDeg);
         ctx.translate(-x, -y);
 
@@ -59,7 +66,6 @@ function Bird(x, y, vx, vy, ax, ay) {
             imageIndex += 1;
             imageIndex %= imageSrc.length;
 
-            this.birdImage.setAttribute("src", imageSrc[imageIndex]);
             this.time = 0;
         }
 
