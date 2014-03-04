@@ -1,0 +1,27 @@
+﻿body {
+    background: #808080;
+}
+
+.playground {
+    margin: auto;
+    background: #fff;
+}
+
+.welcomebackground {
+    background-image: url("res/FirstPage.png");
+}
+
+.movingBackground {
+    background-image: url("res/Background.png");
+    -webkit-animation: movingLeft 5s infinite linear; 
+}
+
+.stoppingMovingbackground {
+    -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes movingLeft /* Safari and Chrome */
+{
+    from {background-position-x: 0px;}
+    to {background-position-x: -100px;}
+}
